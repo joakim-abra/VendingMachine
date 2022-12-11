@@ -10,15 +10,40 @@ using VendingMachine.Wallets;
 
 namespace VendingMachine
 {
+    /// <summary>
+    /// Manager class for running the program
+    /// </summary>
     public class VendingManager
     {
+        /// <summary>
+        /// Instantiates a new MachineWallet
+        /// </summary>
         private MachineWallet MachineWallet = new MachineWallet();
+
+        /// <summary>
+        /// Instantiates a new Menu
+        /// </summary>
         private Menu Menu = new Menu();
+
+        /// <summary>
+        /// Instantiates a user wallet
+        /// </summary>
         public Wallet Wallet = Wallet.CurrentWallet();
+
+        /// <summary>
+        /// Holds a generic product class 
+        /// </summary>
         private IProduct product = null;
+
+        /// <summary>
+        /// Generic factory property.
+        /// </summary>
         private ProductFactory productFactory = null;
 
 
+        /// <summary>
+        /// Runs the main logic of the program.
+        /// </summary>
         public void RunVendingMachine()
         {
             bool run = true;
@@ -49,10 +74,10 @@ namespace VendingMachine
                     if(purchase=="y")
                     {
                         product.Buy();
-                            product = null;
-                            productFactory = null;
-                        }
-                    break;
+                    }
+                        product = null;
+                        productFactory = null;
+                        break;
                 case 10:
                     MachineWallet.Refund(Wallet);
                         run = false;

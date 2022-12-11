@@ -7,8 +7,14 @@ using VendingMachine.Wallets;
 
 namespace VendingMachine.Products.RoughWeather
 {
-    internal class Umbrella : Product, IProduct
+    /// <summary>
+    /// Umbrella class
+    /// </summary>
+    public class Umbrella : Product, IProduct
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Umbrella()
         {
             this.Name = "Umbrella";
@@ -16,6 +22,7 @@ namespace VendingMachine.Products.RoughWeather
             this.TextDescription = "It's a flimsy umbrella.";
             this.ProductID = 9;
         }
+        /// <inheritdoc/>
         public void Buy()
         {
             if (MachineWallet.InsertedAmount - this.Price > 0)
@@ -30,7 +37,7 @@ namespace VendingMachine.Products.RoughWeather
                 Console.ReadKey();
             }
         }
-
+        /// <inheritdoc/>
         public void Description()
         {
             Console.WriteLine($"Product: {this.Name}\n");
@@ -38,6 +45,7 @@ namespace VendingMachine.Products.RoughWeather
             Console.WriteLine($"Description: {this.TextDescription}");
         }
 
+        /// <inheritdoc/>
         public void Use()
         {
             Console.Clear();

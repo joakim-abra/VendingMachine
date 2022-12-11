@@ -9,6 +9,9 @@ using VendingMachine.Products.RoughWeather;
 
 namespace VendingMachine.ProductFactories
 {
+    /// <summary>
+    /// Factory class for Rough Weather products
+    /// </summary>
     public class RoughWeatherFactory : ProductFactory
     {
 

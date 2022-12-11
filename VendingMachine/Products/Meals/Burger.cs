@@ -9,6 +9,9 @@ namespace VendingMachine.Products.Meals
 {
     public class Burger : Product, IProduct
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Burger()
         {
             this.ProductID = 4;
@@ -16,7 +19,7 @@ namespace VendingMachine.Products.Meals
             this.TextDescription = "It's a Cheeseburger.";
             this.Name = "Burger";
         }
-
+        /// <inheritdoc/>
         public void Buy()
         {
             if (MachineWallet.InsertedAmount - this.Price > 0)
@@ -31,13 +34,14 @@ namespace VendingMachine.Products.Meals
                 Console.ReadKey();
             }
         }
+        /// <inheritdoc/>
         public void Description()
         {
             Console.WriteLine($"Product: {this.Name}\n");
             Console.WriteLine($"Price: {this.Price}\n");
             Console.WriteLine($"Description: { this.TextDescription}");
         }
-
+        /// <inheritdoc/>
         public void Use()
         {
             Console.Clear();

@@ -6,15 +6,28 @@ using System.Threading.Tasks;
 
 namespace VendingMachine.Wallets
 {
+    /// <summary>
+    /// Class for the VendingMachine's "wallet"
+    /// </summary>
     public class MachineWallet
     {
+        /// <summary>
+        /// The current amount inserted in the machine.
+        /// </summary>
         public static int InsertedAmount { get; set; } = 0;
 
-
+        /// <summary>
+        /// Displays current amount inserted
+        /// </summary>
         public static void CurrentAmountInserted()
         {
             Console.WriteLine($"There is currently {InsertedAmount} SEK inserted in the machine.");
         }
+
+        /// <summary>
+        /// Runs the logic for inserting money
+        /// </summary>
+        /// <param name="wallet">represents the user wallet</param>
         public void InsertMoney(Wallet wallet)
         {
             CurrentAmountInserted();
@@ -24,7 +37,10 @@ namespace VendingMachine.Wallets
         }
 
 
-
+        /// <summary>
+        /// Runs the logic for selecting a value of coin/bill
+        /// </summary>
+        /// <param name="wallet">represents the user wallet</param>
         private void SelectMoneyValue(Wallet wallet)
         {
             while (true)
@@ -50,7 +66,12 @@ namespace VendingMachine.Wallets
                 }
             }
         }
-        //Inserts coins or bills of selected value
+
+        /// <summary>
+        /// Inserts coins or bills of selected value and removes from user wallet.
+        /// </summary>
+        /// <param name="wallet">represents the user wallet</param>
+        /// <param name="value">the denomination of SEK selected</param>
         private void SelectAmountOfValue(Wallet wallet, int value)
         {
             bool run = true;
@@ -97,7 +118,10 @@ namespace VendingMachine.Wallets
 
         }
 
-        //produces change to consumer and empties inserted amount
+        /// <summary>
+        /// Dispenses remaining money in machine when exiting program and adds to user's wallet.
+        /// </summary>
+        /// <param name="wallet">represents the user wallet</param>
         public void Refund(Wallet wallet)
         {
 

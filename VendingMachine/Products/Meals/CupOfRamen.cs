@@ -9,7 +9,9 @@ namespace VendingMachine.Products.Meals
 {
     public class CupOfRamen : Product, IProduct
     {
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public CupOfRamen()
         {
             this.Name = "Cup of Ramen";
@@ -17,6 +19,7 @@ namespace VendingMachine.Products.Meals
             this.TextDescription = "Hot box of noodles and chicken";
             this.ProductID = 5;
         }
+        /// <inheritdoc/>
         public void Buy()
         {
             if (MachineWallet.InsertedAmount - this.Price > 0)
@@ -31,14 +34,14 @@ namespace VendingMachine.Products.Meals
                 Console.ReadKey();
             }
         }
-
+        /// <inheritdoc/>
         public void Description()
         {
             Console.WriteLine($"Product: {this.Name}\n");
             Console.WriteLine($"Price: {this.Price}\n");
             Console.WriteLine($"Description: {this.TextDescription}");
         }
-
+        /// <inheritdoc/>
         public void Use()
         {
             Console.Clear();

@@ -7,8 +7,14 @@ using VendingMachine.Wallets;
 
 namespace VendingMachine.Products.Meals
 {
-    internal class Haggis : Product, IProduct
+    /// <summary>
+    /// Haggis product class
+    /// </summary>
+    public class Haggis : Product, IProduct
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Haggis()
         {
             this.Name = "Haggis";
@@ -16,6 +22,7 @@ namespace VendingMachine.Products.Meals
             this.TextDescription = "It's a meat and vegetables in a sheeps stomach";
             this.ProductID = 6;
         }
+        /// <inheritdoc/>
         public void Buy()
         {
             if (MachineWallet.InsertedAmount - this.Price > 0)
@@ -30,14 +37,14 @@ namespace VendingMachine.Products.Meals
                 Console.ReadKey();
             }
         }
-
+        /// <inheritdoc/>
         public void Description()
         {
             Console.WriteLine($"Product: {this.Name}\n");
             Console.WriteLine($"Price: {this.Price}\n");
             Console.WriteLine($"Description: {this.TextDescription}");
         }
-
+        /// <inheritdoc/>
         public void Use()
         {
             Console.Clear();

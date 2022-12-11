@@ -7,8 +7,14 @@ using VendingMachine.Wallets;
 
 namespace VendingMachine.Products.RoughWeather
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Sylvester : Product, IProduct
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Sylvester()
         {
             this.Name = "Sylvester";
@@ -16,6 +22,8 @@ namespace VendingMachine.Products.RoughWeather
             this.TextDescription = "It's a water proof hat.";
             this.ProductID = 8;
         }
+
+        /// <inheritdoc/>
         public void Buy()
         {
             if (MachineWallet.InsertedAmount - this.Price > 0)
@@ -30,14 +38,14 @@ namespace VendingMachine.Products.RoughWeather
                 Console.ReadKey();
             }
         }
-
+        /// <inheritdoc/>
         public void Description()
         {
             Console.WriteLine($"Product: {this.Name}\n");
             Console.WriteLine($"Price: {this.Price}\n");
             Console.WriteLine($"Description: {this.TextDescription}");
         }
-
+        /// <inheritdoc/>
         public void Use()
         {
             Console.Clear();

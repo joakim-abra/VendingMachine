@@ -32,6 +32,7 @@ namespace VendingMachine.Menus
             Console.WriteLine("10) Cancel purchase and refund any change\n");
         }
 
+        //Runs the main menu
         public int RunMenu()
         {
             do
@@ -58,6 +59,7 @@ namespace VendingMachine.Menus
 
         }
 
+        //Displays purchase question after selecting product.
         public string PurchasePrompt()
         {
             while(true)
