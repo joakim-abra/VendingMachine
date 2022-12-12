@@ -8,7 +8,7 @@ using VendingMachine.Wallets;
 namespace VendingMachine.Products.RoughWeather
 {
     /// <summary>
-    /// 
+    /// Sylvester product class
     /// </summary>
     public class Sylvester : Product, IProduct
     {
