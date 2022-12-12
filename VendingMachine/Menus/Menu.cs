@@ -44,16 +44,21 @@ namespace VendingMachine.Menus
             do
             {
                 ShowMainMenu();
-                int selection = int.Parse(Console.ReadLine());
-                if(selection >= 0 && selection <=9)
+                int selection;
+                string choice = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(choice))
                 {
-                    return selection;
-                }
-                else if(selection==10)
-                {
-                    Console.WriteLine("Exiting Program\n");
-                    //refund money;
-                    return selection;
+                    selection = int.Parse(choice);
+                    if (selection >= 0 && selection <= 9)
+                    {
+                        return selection;
+                    }
+                    else if (selection == 10)
+                    {
+                        Console.WriteLine("Exiting Program\n");
+                        //refund money;
+                        return selection;
+                    }
                 }
                 else
                 {
@@ -71,20 +76,20 @@ namespace VendingMachine.Menus
         /// <returns>yes or no as string</returns>
         public string PurchasePrompt()
         {
-            while(true)
-            { 
-            Console.WriteLine("Do you wish to purchase this product ? (y/n): ");
-            string choice = Console.ReadLine().ToLower();
-            if (choice != "y" && choice != "n")
+            while (true)
             {
-                Console.WriteLine("Invalid Choice!\n");
-            }
-            else
+                Console.WriteLine("Do you wish to purchase this product ? (y/n): ");
+                string choice = Console.ReadLine().ToLower();
+                if (choice != "y" && choice != "n")
+                {
+                    Console.WriteLine("Invalid Choice!\n");
+                }
+                else
                 {
                     return choice;
                 }
             }
-            
+
 
         }
 

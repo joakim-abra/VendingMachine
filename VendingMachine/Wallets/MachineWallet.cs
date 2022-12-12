@@ -50,19 +50,25 @@ namespace VendingMachine.Wallets
                 wallet.DisplayWallet();
                 Console.WriteLine("Select value of currency to enter (0 to cancel): ");
                 string choice = Console.ReadLine();
+                int selection;
                 int amount = 0;
-                wallet.Coins.TryGetValue(int.Parse(choice), out amount);
+                if (string.IsNullOrEmpty(choice) || !int.TryParse(choice, out selection))
+                {
+                    continue;
+                }
                 if (choice == "0")
                 {
                     break;
                 }
+                wallet.Coins.TryGetValue(selection, out amount);
                 if (amount != 0)
                 {
-                    SelectAmountOfValue(wallet, int.Parse(choice));
+                    SelectAmountOfValue(wallet, selection);
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Selection");
+                    Console.WriteLine("Invalid Selection! Press any key..");
+                    Console.ReadKey();
                 }
             }
         }
@@ -85,7 +91,7 @@ namespace VendingMachine.Wallets
                     convertedAmount = int.Parse(amount);
                     if (convertedAmount < 0)
                     {
-                        Console.WriteLine("Invalid selection\n");
+                        Console.WriteLine("Invalid amount selected\n");
                     }
                     else
                     {
