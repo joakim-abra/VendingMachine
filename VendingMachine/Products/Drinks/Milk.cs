@@ -7,9 +7,14 @@ using VendingMachine.Wallets;
 
 namespace VendingMachine.Products.Drinks
 {
-    internal class Milk : Product, IProduct
+    /// <summary>
+    /// Milk product class
+    /// </summary>
+    public class Milk : Product, IProduct
     {
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Milk()
         {
             this.ProductID = 2;
@@ -17,6 +22,8 @@ namespace VendingMachine.Products.Drinks
             this.TextDescription = "A 50cl bottle of milk from Arla. Contains 3% fat.";
             this.Price = 12;
         }
+
+        /// <inhertitdoc/>
         public void Buy()
         {
             if (MachineWallet.InsertedAmount - this.Price > 0)
@@ -33,7 +40,7 @@ namespace VendingMachine.Products.Drinks
             }
         }
 
-        /// <inherit/>
+        /// <inhertitdoc/>
         public void Use()
         {
             Console.Clear();
@@ -42,7 +49,7 @@ namespace VendingMachine.Products.Drinks
             Console.ReadLine();
         }
 
-        /// <inherit/>
+        /// <inhertitdoc/>
         public void Description()
         {
             Console.WriteLine($"Product: {this.Name}\nDescription: {this.TextDescription}\nPrice: {this.Price}");

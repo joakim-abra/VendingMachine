@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace VendingMachine.Products
 {
+    /// <summary>
+    /// Abstract product base class
+    /// </summary>
     public abstract class Product
     {
         /// <summary>
@@ -24,6 +27,9 @@ namespace VendingMachine.Products
         /// </summary>
         public int Price { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int ProductID { get; set; }
 
 

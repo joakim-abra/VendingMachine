@@ -7,9 +7,15 @@ using VendingMachine.Wallets;
 
 namespace VendingMachine.Products.Drinks
 {
+    /// <summary>
+    /// Coffe product class
+    /// </summary>
     public class Coffee : Product, IProduct
     {
 
+        /// <summary>
+        /// Constructor with initializing of properties
+        /// </summary>
         public Coffee()
         {
             this.ProductID = 1;
@@ -18,6 +24,7 @@ namespace VendingMachine.Products.Drinks
             this.Price = 10;
         }
 
+        /// <inhertitdoc/>
         public void Buy()
         {
             if(MachineWallet.InsertedAmount-this.Price > 0)
@@ -34,7 +41,7 @@ namespace VendingMachine.Products.Drinks
             }
         }
 
-        /// <inherit/>
+        /// <inhertitdoc/>
         public void Use()
         {
             Console.Clear();

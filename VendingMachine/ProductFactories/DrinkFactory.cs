@@ -8,8 +8,12 @@ using VendingMachine.Products.Drinks;
 
 namespace VendingMachine.ProductFactories
 {
+    /// <summary>
+    /// Factory for drink products
+    /// </summary>
     public class DrinkFactory : ProductFactory
     {
+        /// <inhertitdoc/>
         public override IProduct GetProduct(int productID)
         {
             switch(productID)

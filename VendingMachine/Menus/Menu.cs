@@ -10,6 +10,9 @@ namespace VendingMachine.Menus
 {
     internal class Menu
     {
+        /// <summary>
+        /// Prints Main Menu
+        /// </summary>
         private void ShowMainMenu()
         {
             Console.WriteLine("\n*Welcome to the Vending Machine!*\n*Please insert coins or select a product to view information*\n");
@@ -32,7 +35,10 @@ namespace VendingMachine.Menus
             Console.WriteLine("10) Cancel purchase and refund any change\n");
         }
 
-        //Runs the main menu
+        /// <summary>
+        /// Runs the main menu
+        /// </summary>
+        /// <returns>valid input choice</returns>
         public int RunMenu()
         {
             do
@@ -59,7 +65,10 @@ namespace VendingMachine.Menus
 
         }
 
-        //Displays purchase question after selecting product.
+        /// <summary>
+        /// /Displays purchase question after selecting product.
+        /// </summary>
+        /// <returns>yes or no as string</returns>
         public string PurchasePrompt()
         {
             while(true)

@@ -13,7 +13,7 @@ namespace VendingMachine.ProductFactories
     public abstract class ProductFactory
     {
         /// <summary>
-        /// Provides product from factory
+        /// Provides product object from factory
         /// </summary>
         /// <param name="productID"></param>
         /// <returns></returns>

@@ -8,8 +8,12 @@ using VendingMachine.Products.Meals;
 
 namespace VendingMachine.ProductFactories
 {
-    internal class MealFactory : ProductFactory
+    /// <summary>
+    /// Factory for meal product objects
+    /// </summary>
+    public class MealFactory : ProductFactory
     {
+        /// <inhertitdoc/>
         public override IProduct GetProduct(int productID)
         {
             switch (productID)

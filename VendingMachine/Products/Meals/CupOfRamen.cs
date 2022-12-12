@@ -7,6 +7,9 @@ using VendingMachine.Wallets;
 
 namespace VendingMachine.Products.Meals
 {
+    /// <summary>
+    /// Cup of Ramen class
+    /// </summary>
     public class CupOfRamen : Product, IProduct
     {
         /// <summary>

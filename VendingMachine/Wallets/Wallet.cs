@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// Provides a Wallet instance of none exists.
+        /// Provides a Wallet instance if none exists.
         /// </summary>
         /// <returns></returns>
         public static Wallet CurrentWallet()

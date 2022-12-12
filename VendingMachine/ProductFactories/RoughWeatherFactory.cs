@@ -14,7 +14,7 @@ namespace VendingMachine.ProductFactories
     /// </summary>
     public class RoughWeatherFactory : ProductFactory
     {
-
+        /// <inheritdoc/>
         public override IProduct GetProduct(int productID)
         {
             switch (productID)
